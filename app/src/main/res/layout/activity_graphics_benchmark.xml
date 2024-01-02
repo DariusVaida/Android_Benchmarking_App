@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".GraphicsBenchmarkActivity">
+    android:layout_height="match_parent">
 
-    <!-- Add UI elements specific to Graphics Benchmark Activity -->
-    <TextView
-        android:id="@+id/graphicsBenchmarkTitle"
+    <Button
+        android:id="@+id/startBenchmarkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="Graphics Benchmark Activity"
-        android:textSize="24sp" />
+        android:layout_centerInParent="true"
+        android:text="Start Benchmark" />
 
     <TextView
         android:id="@+id/graphicsBenchmarkResultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/graphicsBenchmarkTitle"
+        android:layout_below="@id/startBenchmarkButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:textSize="18sp" />
 
-    <!-- Add any other UI elements and layout as needed for graphics benchmark activity -->
+    <com.benchmarkingapp.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/graphicsBenchmarkResultTextView" />
 </RelativeLayout>

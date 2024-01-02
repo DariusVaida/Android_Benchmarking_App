@@ -1,52 +1,43 @@
 package com.benchmarkingapp;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.os.SystemClock;
 import android.view.SurfaceHolder;
 
 public class DrawingThread extends Thread {
-    private SurfaceHolder surfaceHolder;
-    private boolean running;
 
-    public DrawingThread(SurfaceHolder holder) {
-        this.surfaceHolder = holder;
-        this.running = true;
+    private SurfaceHolder surfaceHolder;
+    private DrawingView drawingView;
+    private boolean isRunning;
+
+    public DrawingThread(SurfaceHolder holder, DrawingView view) {
+        surfaceHolder = holder;
+        drawingView = view;
+        isRunning = false;
     }
+
+    public void setRunning(boolean run) {
+        isRunning = run;
+    }
+
+
 
     @Override
     public void run() {
-        while (running) {
+        while (isRunning) {
             Canvas canvas = null;
             try {
-                canvas = surfaceHolder.lockCanvas();
+                // Lock the canvas for drawing
+                canvas = surfaceHolder.lockCanvas(null);
                 synchronized (surfaceHolder) {
-                    if (canvas != null) {
-                        // Add your drawing logic here
-                        // For example, draw a simple shape or animation
-                        canvas.drawColor(Color.BLACK); // Clear the canvas with a black color
-                    }
+                    // Call the draw method in your DrawingView
+                    drawingView.drawCircle(100, 100, 50);
                 }
             } finally {
+                // Unlock the canvas
                 if (canvas != null) {
                     surfaceHolder.unlockCanvasAndPost(canvas);
                 }
             }
-
-            // Adjust the sleep duration to control the frame rate
-            SystemClock.sleep(16); // ~60 FPS
         }
-    }
-
-    public void stopDrawing() {
-        running = false;
-    }
-
-    public void resumeDrawing() {
-        running = true;
-    }
-
-    public void pauseDrawing() {
-        running = false;
     }
 }
