@@ -32,7 +32,6 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
         // Draw a circle on the canvas
         Canvas canvas = getHolder().lockCanvas();
         if (canvas != null) {
-            canvas.drawColor(Color.WHITE);  // Clear the canvas
             canvas.drawCircle(x, y, radius, paint);
             getHolder().unlockCanvasAndPost(canvas);
         }
@@ -43,7 +42,7 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
         Canvas canvas = getHolder().lockCanvas();
         if (canvas != null) {
             Paint rectPaint = new Paint();
-            rectPaint.setColor(Color.RED);
+            rectPaint.setColor(Color.GREEN);
             canvas.drawRect(left, top, right, bottom, rectPaint);
             getHolder().unlockCanvasAndPost(canvas);
         }
@@ -101,3 +100,4 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 }
+

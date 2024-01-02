@@ -1,5 +1,7 @@
 package com.benchmarkingapp;
 
+import static android.graphics.Color.RED;
+
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -36,13 +38,19 @@ public class GraphicsBenchmarkActivity extends AppCompatActivity {
         private void runBenchmark() {
             startBenchmarkButton.setEnabled(false); // Disable the button during the benchmark
             drawingView.startBenchmark();
-            long startTime = SystemClock.uptimeMillis();
+            long startTime = System.currentTimeMillis();
 
             // Simulate rendering of shapes (rectangle and circle)
-            drawingView.drawRect(100, 100, 300, 300);
-            drawingView.drawCircle(500, 500, 100);
+            while (System.currentTimeMillis() - startTime < 3000) {
+                // Simulate rendering of shapes (rectangle and circle)
+                drawingView.drawCircle(100, 100, 50);
+                drawingView.drawRect(200, 200, 400, 400);
+                drawingView.drawRect(1000,1000,200,200);
+            }
 
-            long endTime = SystemClock.uptimeMillis() + (int) (Math.random() * (55 - 12 + 1) + 12) ;
+
+
+            long endTime = System.currentTimeMillis();
             long benchmarkTime = endTime - startTime;
             drawingView.stopBenchmark();
             startBenchmarkButton.setEnabled(true); // Enable the button after the benchmark
