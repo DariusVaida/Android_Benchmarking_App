@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".CpuBenchmarkActivity">
+
+    <!-- Title for CPU Benchmark Activity -->
+    <TextView
+        android:id="@+id/cpuBenchmarkTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="CPU Benchmark Activity"
+        android:textSize="24sp" />
+
+    <!-- Display CPU benchmark result -->
+    <TextView
+        android:id="@+id/cpuBenchmarkResultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cpuBenchmarkTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp" />
+
+    <!-- Display Device Information -->
+    <TextView
+        android:id="@+id/deviceInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showDetailsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp" />
+
+    <!-- Button to Show Details -->
+    <Button
+        android:id="@+id/showDetailsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cpuBenchmarkResultTextView"
+        android:layout_centerHorizontal="true"
+        android:text="Show Details"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#003049"
+        android:textColor="@color/white" />
+
+    <!-- Add any other UI elements and layout as needed for CPU benchmark activity -->
+
+</RelativeLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".MainActivity">
+
+    <!-- CPU Benchmark Button -->
+<androidx.cardview.widget.CardView
+android:id="@+id/cpuBenchmarkCard"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_centerHorizontal="true"
+android:layout_centerVertical="true"
+    app:cardCornerRadius="32dp"
+    app:cardElevation="8dp">
+
+<Button
+android:id="@+id/cpuBenchmarkButton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="CPU Benchmark"
+android:textSize="20sp"
+android:padding="16dp"
+android:backgroundTint="#003049"
+    android:textColor="#FFFFFF" />
+
+    </androidx.cardview.widget.CardView>
+
+<androidx.cardview.widget.CardView
+android:id="@+id/memoryBenchmarkCard"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_below="@id/cpuBenchmarkCard"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="16dp"
+app:cardCornerRadius="32dp"
+app:cardElevation="8dp">
+
+<Button
+    android:id="@+id/memoryBenchmarkButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Memory Benchmark"
+    android:textSize="20sp"
+    android:padding="16dp"
+    android:backgroundTint="#003049"
+    android:textColor="#FFFFFF" />
+
+</androidx.cardview.widget.CardView>
+
+    <!-- Graphics Benchmark Button -->
+<androidx.cardview.widget.CardView
+android:id="@+id/graphicsBenchmarkCard"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_below="@id/memoryBenchmarkCard"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="16dp"
+app:cardCornerRadius="32dp"
+app:cardElevation="8dp">
+
+    <Button
+        android:id="@+id/graphicsBenchmarkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#003049"
+        android:padding="16dp"
+        android:text="Graphics Benchmark"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+</androidx.cardview.widget.CardView>
+
+<TextView
+android:id="@+id/cpuResultTextView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_below="@id/graphicsBenchmarkCard"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="16dp"
+android:textSize="18sp"
+android:visibility="gone" />
+
+<TextView
+android:id="@+id/memoryResultTextView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_below="@id/cpuResultTextView"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="16dp"
+android:textSize="18sp"
+android:visibility="gone" /> <!-- Hide initially -->
+
+<TextView
+android:id="@+id/graphicsResultTextView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_below="@id/memoryResultTextView"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="16dp"
+android:textSize="18sp"
+android:visibility="gone" /> <!-- Hide initially -->
+
+    </RelativeLayout>
