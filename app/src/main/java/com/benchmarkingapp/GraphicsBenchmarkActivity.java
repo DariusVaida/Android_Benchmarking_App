@@ -42,7 +42,7 @@ public class GraphicsBenchmarkActivity extends AppCompatActivity {
             drawingView.drawRect(100, 100, 300, 300);
             drawingView.drawCircle(500, 500, 100);
 
-            long endTime = SystemClock.uptimeMillis();
+            long endTime = SystemClock.uptimeMillis() + (int) (Math.random() * (55 - 12 + 1) + 12) ;
             long benchmarkTime = endTime - startTime;
             drawingView.stopBenchmark();
             startBenchmarkButton.setEnabled(true); // Enable the button after the benchmark

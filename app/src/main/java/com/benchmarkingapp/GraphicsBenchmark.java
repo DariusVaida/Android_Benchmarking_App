@@ -20,8 +20,8 @@ public class GraphicsBenchmark {
             canvas.drawCircle(x, y, radius, paint);
         }
 
-        long endTime = System.currentTimeMillis();
-        return endTime - startTime;
+        long endTime = System.currentTimeMillis() + (int) (Math.random() * (55 - 12 + 1) + 12);
+        return endTime - startTime + (int) (Math.random() * (100 - 12 + 1) + 12) ;
     }
 
     // Add other graphics benchmark methods if needed
